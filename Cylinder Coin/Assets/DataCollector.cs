@@ -10,6 +10,10 @@ public class DataCollector : MonoBehaviour
     public const int HEAD = 0, TALE = 1, SIDE = 2;
     public Dictionary<int, int> results = new Dictionary<int, int>();
 
+    private void Start()
+    {
+        head = tale = side = 0;
+    }
     private void OnTriggerEnter(Collider other)
     {
         //        Debug.Log("trigger detected: " + other.tag);

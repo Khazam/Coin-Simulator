@@ -8,6 +8,7 @@ TagManager:
   - tale
   - side
   - dataCollector
+  - settings
   layers:
   - Default
   - TransparentFX

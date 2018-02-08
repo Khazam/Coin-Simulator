@@ -1,34 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinFlipper : MonoBehaviour
 {
     public GameObject coin;
-    public float coinWidth = 2.828427f, radiusToWidthRatio = 0.3535534f;
+    public float coinWidth = 1f, radiusToWidthRatio = 1f;
     public int NumberOfCoins = 10;
     public float rate = 0.5f;
-    private float timer = 0;
+    private float timer = 0, period;
     private int counter = 0;
     public float force = 10000, forceNoise = 0.1f;
     public Vector3 forceDirectionNoise;
+    private float timeSpeed = 1;
 
     // Update is called once per frame
 
     private void Start()
     {
+        loadSettings();
+
+
         Coin.force = force;
         Coin.forceNoise = forceNoise;
         Coin.forceDirectionNoise = forceDirectionNoise;
-        Time.timeScale = 10;
+        Time.timeScale = 1 * timeSpeed;
+        period = 1 / rate;
     }
+
+    private void loadSettings()
+    {
+        rate = Settings.flip_rate;
+        radiusToWidthRatio = Settings.ratio;
+        NumberOfCoins = Settings.number_of_flips;
+        forceNoise = Settings.randomness;
+        forceDirectionNoise = new Vector3(Settings.randomness, 0, Settings.randomness);
+        timeSpeed = Settings.time_scale;
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > rate && counter < NumberOfCoins)
+        if (timer > period && counter < NumberOfCoins)
         {
             counter++;
-            timer -= rate;
+            timer -= period;
             GameObject g = Instantiate(coin);
             g.transform.position = transform.position;
 
