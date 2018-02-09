@@ -345,7 +345,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640399496537616}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3cf8973855883204d8a7f051ce1976f4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -441,6 +441,8 @@ MonoBehaviour:
   flip: 1
   forcePoint: {fileID: 4175263064134746}
   rigi: {fileID: 54920571812973678}
+  coinPhysicsMaterial: {fileID: 13400000, guid: 3cf8973855883204d8a7f051ce1976f4,
+    type: 2}
 --- !u!135 &135208087330294184
 SphereCollider:
   m_ObjectHideFlags: 1

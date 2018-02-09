@@ -9,11 +9,15 @@ public class DataCollector : MonoBehaviour
     private int delete_this_head = 0, delete_this_tale = 0, delete_this_side = 0;
     public const int HEAD = 0, TALE = 1, SIDE = 2;
     public Dictionary<int, int> results = new Dictionary<int, int>();
+    [SerializeField]
+    private BoxCollider table;
 
     private void Start()
     {
         head = tale = side = 0;
+        setFriction(Settings.surface_static_friction, Settings.surface_dynamic_friction);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         //        Debug.Log("trigger detected: " + other.tag);
@@ -82,6 +86,12 @@ public class DataCollector : MonoBehaviour
                 side--;
                 break;
         }
+    }
+
+    internal void setFriction(float staticFriction, float dynamicFriction)
+    {
+        table.material.staticFriction = staticFriction;
+        table.material.dynamicFriction = dynamicFriction;
     }
 
 

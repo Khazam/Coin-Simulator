@@ -38,14 +38,24 @@ public class Coin : MonoBehaviour
 
     internal void setWidth(float coinWidth, float ratio)
     {
-        Vector3 s = new Vector3(ratio * coinWidth,cylendaerModelCorrection * coinWidth, ratio * coinWidth);
+        Vector3 s = new Vector3(ratio * coinWidth, cylendaerModelCorrection * coinWidth, ratio * coinWidth);
         transform.localScale = s;
     }
-
-
+    
     public void runFlip()
     {
         Vector3 randDir = new Vector3(UnityEngine.Random.Range(-forceDirectionNoise.x, forceDirectionNoise.x), UnityEngine.Random.Range(-forceDirectionNoise.y, forceDirectionNoise.y), UnityEngine.Random.Range(-forceDirectionNoise.z, forceDirectionNoise.z));
         rigi.AddForceAtPosition((Vector3.up + randDir).normalized * (force + force * UnityEngine.Random.Range(-forceNoise, forceNoise)), forcePoint.position);
+    }
+
+    internal void setDensity(float coinDensity)
+    {
+        rigi.SetDensity(coinDensity);
+    }
+
+    internal void setElasticity(float coinElasticity)
+    {
+        MeshCollider mc = GetComponent<MeshCollider>();
+        mc.material.bounciness = coinElasticity;
     }
 }
