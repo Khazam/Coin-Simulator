@@ -709,6 +709,11 @@ Prefab:
       propertyPath: surface_dynamic_friction
       value: 
       objectReference: {fileID: 1381383808}
+    - target: {fileID: 114840182827400964, guid: 2d846356fb7f2934f8b7a5a34cf97b4d,
+        type: 2}
+      propertyPath: force
+      value: 
+      objectReference: {fileID: 240118750}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d846356fb7f2934f8b7a5a34cf97b4d, type: 2}
   m_IsPrefabParent: 0
@@ -1207,8 +1212,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729079682}
   m_HandleRect: {fileID: 729079681}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.8366013
+  m_Value: 0.25683948
+  m_Size: 0.83660126
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2317,7 +2322,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Coin Density(g/cm^3):'
+  m_Text: 'Coin Density:'
 --- !u!222 &792255710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3235,7 +3240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000043433763, y: 75}
+  m_AnchoredPosition: {x: -0.000043433763, y: 55.73704}
   m_SizeDelta: {x: 0, y: 459}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &927882972
@@ -3850,7 +3855,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Force(N):'
+  m_Text: 'Force:'
 --- !u!222 &1234204106
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3924,7 +3929,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Flip Rate(flips/seconds):'
+  m_Text: 'Flip Rate(flips/second):'
 --- !u!222 &1253257733
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5086,7 +5091,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: e.g. 8.908
+  m_Text: e.g. 1.2
 --- !u!222 &1551903443
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class MainMenuSystem : MonoBehaviour
 {
     //    private Settings settings;
     [SerializeField]
-    private InputField ratio, number_of_flips, randomness, time_scale, flip_rate, coin_density;
+    private InputField ratio, number_of_flips, randomness, force, time_scale, flip_rate, coin_density;
     [SerializeField]
     private Slider coin_elasticity, surface_static_friction, surface_dynamic_friction;
 
@@ -38,6 +38,10 @@ public class MainMenuSystem : MonoBehaviour
         {
             coin_density.text = Settings.coin_density + "";
         }
+        if (Settings.force > 0)
+        {
+            force.text = Settings.force + "";
+        }
 
         coin_elasticity.value = Settings.coin_elasticity;
         surface_static_friction.value = Settings.surface_static_friction;
@@ -55,6 +59,7 @@ public class MainMenuSystem : MonoBehaviour
         float.TryParse(ratio.text, out Settings.ratio);
         int.TryParse(number_of_flips.text, out Settings.number_of_flips);
         float.TryParse(randomness.text, out Settings.randomness);
+        float.TryParse(force.text, out Settings.force);
         float.TryParse(time_scale.text, out Settings.time_scale);
         float.TryParse(flip_rate.text, out Settings.flip_rate);
         float.TryParse(coin_density.text, out Settings.coin_density);
@@ -69,7 +74,7 @@ public class MainMenuSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log(Settings.ratio + ":" + Settings.number_of_flips + ":" + Settings.randomness + ":" + Settings.time_scale + ":" + Settings.flip_rate);
+            // Debug.Log(Settings.ratio + ":" + Settings.number_of_flips + ":" + Settings.randomness + ":" + Settings.time_scale + ":" + Settings.flip_rate);
         }
     }
 }

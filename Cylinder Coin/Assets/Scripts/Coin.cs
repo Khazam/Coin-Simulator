@@ -41,7 +41,7 @@ public class Coin : MonoBehaviour
         Vector3 s = new Vector3(ratio * coinWidth, cylendaerModelCorrection * coinWidth, ratio * coinWidth);
         transform.localScale = s;
     }
-    
+
     public void runFlip()
     {
         Vector3 randDir = new Vector3(UnityEngine.Random.Range(-forceDirectionNoise.x, forceDirectionNoise.x), UnityEngine.Random.Range(-forceDirectionNoise.y, forceDirectionNoise.y), UnityEngine.Random.Range(-forceDirectionNoise.z, forceDirectionNoise.z));
@@ -50,7 +50,8 @@ public class Coin : MonoBehaviour
 
     internal void setDensity(float coinDensity)
     {
-        rigi.SetDensity(coinDensity);
+        //rigi.SetDensity(coinDensity);
+        rigi.mass = coinDensity * (transform.localScale.x / 2) * (transform.localScale.x / 2) * Mathf.PI * (transform.localScale.y * 2);
     }
 
     internal void setElasticity(float coinElasticity)

@@ -40,7 +40,7 @@ public class CoinFlipper : MonoBehaviour
         timeSpeed = Settings.time_scale;
         coinDensity = Settings.coin_density;
         coinElasticity = Settings.coin_elasticity;
-
+        Coin.force = Settings.force;
     }
 
     void Update()

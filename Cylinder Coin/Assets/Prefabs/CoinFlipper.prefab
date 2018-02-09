@@ -54,6 +54,8 @@ MonoBehaviour:
   coin: {fileID: 1640399496537616, guid: 22925389345a9c549a090e52918cf94d, type: 2}
   coinWidth: 1
   radiusToWidthRatio: 2.3623047
+  coinDensity: 1
+  coinElasticity: 0
   NumberOfCoins: 3000
   rate: 0.5
   force: 500

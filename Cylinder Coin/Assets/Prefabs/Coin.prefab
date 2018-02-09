@@ -331,7 +331,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640399496537616}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -441,8 +441,6 @@ MonoBehaviour:
   flip: 1
   forcePoint: {fileID: 4175263064134746}
   rigi: {fileID: 54920571812973678}
-  coinPhysicsMaterial: {fileID: 13400000, guid: 3cf8973855883204d8a7f051ce1976f4,
-    type: 2}
 --- !u!135 &135208087330294184
 SphereCollider:
   m_ObjectHideFlags: 1
